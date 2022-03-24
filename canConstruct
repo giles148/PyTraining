@@ -1,0 +1,17 @@
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        
+        #sort and list each letter
+        ransom = sorted(list(ransomNote))
+        magazine = sorted(list(magazine))
+        
+        #check each letter if it matches in the ransomenote
+        for char in magazine:
+            if ransom and char == ransom[0]:
+                ransom.pop(0)
+                
+        if ransom:
+            return False
+        else:
+            return True
+                
